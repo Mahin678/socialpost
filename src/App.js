@@ -14,6 +14,7 @@ import {
 import Comments from './Components/Comments/Comments';
 import Allpost from './Components/AllPost/Allpost';
 import PrimarySearchAppBar from './Components/PrimarySearchAppBar/PrimarySearchAppBar';
+import { Box } from '@material-ui/core';
 
 
 function App() {
@@ -25,14 +26,14 @@ function App() {
         <Switch>
           <Route path="/Home">
             <Banner></Banner>
-            <div className="wrapper d-flex " >
+            <Box  className="wrapper  " display="flex">
               <div className="postComponent w-75 mt-4">
                 <Post></Post>
               </div>
               <div className="categoryComponent" >
                 <Categorys></Categorys>
               </div>
-            </div>
+            </Box>
           </Route>
           <Route path="/Post">
             <Banner></Banner>
@@ -45,14 +46,15 @@ function App() {
             <h1>Site is comming</h1>
           </Route>
           <Route exact path="/">
-            <div className="wrapper d-flex " >
-              <div className="postComponent w-75  ">
+          <Banner></Banner>
+    <Box className="wrapper" display="flex" >
+    <div className="postComponent w-75  ">
                 <Post></Post>
               </div>
               <div className="categoryComponent" >
                 <Categorys></Categorys>
               </div>
-            </div>
+    </Box>
           </Route>
           <Route path="*" >
             <h1> Site is not found (404)</h1>

@@ -11,11 +11,17 @@ import './Allpost.css';
 import CardActions from '@material-ui/core/CardActions';
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import BackToTop from '../UseScroll/UseScroll';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
     root: {
         maxWidth: "100%",
         margin: "20px"
+    },
+    paper: {
+        height: "100%",
+        width: 500,
     },
     media: {
         height: 200,
@@ -23,7 +29,15 @@ const useStyles = makeStyles({
 
 });
 
-  
+const useGridStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    control: {
+        padding: theme.spacing(2),
+    },
+}));
+
 
 const Allpost = () => {
     const [allPost, setAllPost] = useState([]);
@@ -32,40 +46,40 @@ const Allpost = () => {
             .then(info => setAllPost(info.data))
     })
     const classes = useStyles();
+    const gridClass = useGridStyles();
     return (
         <div className="container my-5" >
             <h1>Total {allPost.length} Titile available right now : </h1>
             <BackToTop></BackToTop>
-            <div className="d-flex" >
-            </div>
-      <div className="row">
+            <div className="row">
+
                 {
-                allPost.map(ele =>
-                    <div className="col-lg-6">
+                    allPost.map(ele =>
+                        <div className="col-lg-6">
                             <Card className={classes.root}>
-                        <CardActionArea>
-                            <CardMedia
-                                className={classes.media}
-                                image={`https://loremflickr.com/600/400?random=${ele.id}`}
-                                title="Contemplative Reptile"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {ele.title}
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                   {ele.body}
-                        </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                      <Link  to={`/comment/${ele.id}`} variant="contained" color="primary">   <Button size="small"   variant="contained" color="primary" >View  post</Button></Link>
-                        </CardActions>
-                    </Card>
-                    </div>
-                )
-            }
-                </div>
+                                <CardActionArea>
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={`https://loremflickr.com/600/400?random=${ele.id}`}
+                                        title="Contemplative Reptile"
+                                    />
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            {ele.title}
+                                        </Typography>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                            {ele.body}
+                                        </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                                <CardActions>
+                                    <Link to={`/comment/${ele.id}`} variant="contained" color="primary">   <Button size="small" variant="contained" color="primary" >View  post</Button></Link>
+                                </CardActions>
+                            </Card>
+                        </div>
+                    )
+                }
+            </div>
         </div>
     );
 };
