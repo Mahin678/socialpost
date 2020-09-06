@@ -9,10 +9,8 @@ import Button from '@material-ui/core/Button';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import './Allpost.css';
 import CardActions from '@material-ui/core/CardActions';
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import BackToTop from '../UseScroll/UseScroll';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
     root: {
@@ -29,14 +27,7 @@ const useStyles = makeStyles({
 
 });
 
-const useGridStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    control: {
-        padding: theme.spacing(2),
-    },
-}));
+
 
 
 const Allpost = () => {
@@ -46,7 +37,6 @@ const Allpost = () => {
             .then(info => setAllPost(info.data))
     })
     const classes = useStyles();
-    const gridClass = useGridStyles();
     return (
         <div className="container my-5" >
             <h1>Total {allPost.length} Titile available right now : </h1>

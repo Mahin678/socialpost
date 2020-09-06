@@ -34,37 +34,37 @@ const Post = () => {
   const classes = useStyles();
   return (
     <div className="post-wrapper" >
-        <h2>Featured Articles</h2>
-        <div className="post-card ">
-          {
-            post.slice(0, 5).map(ele => <>
-              <Card className={classes.root}>
-                <div className={classes.details}>
-                  <CardContent className={classes.content}>
-                    <Typography component="h5" variant="h5">
-                      {ele.title}
-                    </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
-                      {ele.body}
-                    </Typography>
-                    <Link to={`/comment/${ele.id}`}    >
-                      <Button variant="contained" color="primary" >Details</Button>
-                    </Link>
-                  </CardContent>
-                </div>
-                <CardMedia
-                  className={classes.cover}
-                  image={`https://loremflickr.com/600/400?random=${ele.id}`}
-                  title="Live from space album cover"
-                />
-              </Card>
-            </>)
-          }
-        </div>
+      <h2>Featured Articles</h2>
+      <div className="post-card ">
+        {
+          post.slice(0, 5).map(ele => <>
+            <Card className={classes.root}>
+              <div className={classes.details}>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    {ele.title}
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    {ele.body}
+                  </Typography>
+                  <Link to={`/comment/${ele.id}`}    >
+                    <Button variant="contained" color="primary" >Details</Button>
+                  </Link>
+                </CardContent>
+              </div>
+              <CardMedia
+                className={classes.cover}
+                image={`https://loremflickr.com/600/400?random=${ele.id}`}
+                title="Live from space album cover"
+              />
+            </Card>
+          </>)
+        }
+      </div>
 
-        <Link to={`/post/4${post}`} variant="contained" color="primary"> 
-          <Button className="mx-auto d-block" variant="contained" color="primary" >View all post</Button>
-          </Link>
+      <Link to={`/post/4${post}`} variant="contained" color="primary">
+        <Button className="mx-auto d-block" variant="contained" color="primary" >View all post</Button>
+      </Link>
 
     </div>
   );

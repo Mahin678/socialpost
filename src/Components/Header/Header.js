@@ -4,12 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Container, Button  } from '@material-ui/core';
 import { Link } from 'react-router-dom';
@@ -118,19 +114,21 @@ export default function PrimarySearchAppBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-            <Link to={"/About Project"}><Button className={classes.btnStyle} variant="contained" color="primary">About Project</Button></Link>
-     
-            </MenuItem>
-            <MenuItem>
-            <Link to={"/Post"}><Button className={classes.btnStyle}  variant="contained" color="primary">Comment</Button></Link>
-            </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
+                       <MenuItem onClick={handleProfileMenuOpen}>
             <Link to={"/Home"}><Button className={classes.btnStyle}  variant="contained" color="primary">Home</Button></Link>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
             <Link to={"/Post"}><Button className={classes.btnStyle}  variant="contained" color="primary">Post</Button></Link>
             </MenuItem>
+            <MenuItem>
+            <Link to={"/Post"}><Button className={classes.btnStyle}  variant="contained" color="primary">Comment</Button></Link>
+            </MenuItem>
+            <MenuItem>
+            <Link to={"/About Project"}><Button className={classes.btnStyle} variant="contained" color="primary">About Project</Button></Link>
+     
+            </MenuItem>
+           
+         
         </Menu>
     );
     return (

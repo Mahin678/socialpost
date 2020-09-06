@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,7 +13,6 @@ import {
 } from "react-router-dom";
 import Comments from './Components/Comments/Comments';
 import Allpost from './Components/AllPost/Allpost';
-import PrimarySearchAppBar from './Components/PrimarySearchAppBar/PrimarySearchAppBar';
 import { Box } from '@material-ui/core';
 
 
@@ -22,11 +21,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Header></Header>
+        <Header></Header>
         <Switch>
           <Route path="/Home">
             <Banner></Banner>
-            <Box  className="wrapper  " display="flex">
+            <Box className="wrapper  " display="flex">
               <div className="postComponent w-75 mt-4">
                 <Post></Post>
               </div>
@@ -46,15 +45,15 @@ function App() {
             <h1>Site is comming</h1>
           </Route>
           <Route exact path="/">
-          <Banner></Banner>
-    <Box className="wrapper" display="flex" >
-    <div className="postComponent w-75  ">
+            <Banner></Banner>
+            <Box className="wrapper" display="flex" >
+              <div className="postComponent w-75  ">
                 <Post></Post>
               </div>
               <div className="categoryComponent" >
                 <Categorys></Categorys>
               </div>
-    </Box>
+            </Box>
           </Route>
           <Route path="*" >
             <h1> Site is not found (404)</h1>
