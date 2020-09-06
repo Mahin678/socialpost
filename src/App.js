@@ -26,12 +26,12 @@ function App() {
           <Route path="/Home">
             <Banner></Banner>
             <Box className="wrapper  " display="flex">
-              <div className="postComponent w-75 mt-4">
+              <Box mt={2} className="postComponent  " width="75%">
                 <Post></Post>
-              </div>
-              <div className="categoryComponent" >
+              </Box>
+              <Box className="categoryComponent" >
                 <Categorys></Categorys>
-              </div>
+              </Box>
             </Box>
           </Route>
           <Route path="/Post">
@@ -47,12 +47,12 @@ function App() {
           <Route exact path="/">
             <Banner></Banner>
             <Box className="wrapper" display="flex" >
-              <div className="postComponent w-75  ">
+              <Box   className="postComponent  "  width="75%">
                 <Post></Post>
-              </div>
-              <div className="categoryComponent" >
+              </Box>
+              <Box className="categoryComponent" >
                 <Categorys></Categorys>
-              </div>
+              </Box>
             </Box>
           </Route>
           <Route path="*" >

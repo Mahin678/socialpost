@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { Button } from '@material-ui/core';
+import { Button, Typography, Box } from '@material-ui/core';
 import './Banners.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -19,10 +19,13 @@ const Banner = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <Box>
       <div className="web-Banner" >
-        <h1>Have a Question?</h1>
-        <p>If you have any question you can ask below or enter what you are looking for!</p>
+        <Typography component="h4" variant="h4">
+                        Search for your post
+                                            </Typography>
+        <Typography component="p"  m={2} variant="p">If you have any question you can ask below or enter what you are looking for!</Typography>
+
         <div className="input-group input-group-lg w-50 mx-auto">
           <div className={classes.root}>
             <TextField
@@ -37,15 +40,15 @@ const Banner = () => {
               variant="outlined"
             />
           </div>
-          <div className="input-group-prepend">
+          <Box className="input-group-prepend">
             <Button variant="contained" color="primary"  >
               Search
             </Button>
 
-          </div>
+          </Box>
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 

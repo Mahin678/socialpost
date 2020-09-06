@@ -39,7 +39,10 @@ const Allpost = () => {
     const classes = useStyles();
     return (
         <div className="container my-5" >
-            <h1>Total {allPost.length} Titile available right now : </h1>
+            <Typography gutterBottom variant="h4" component="h4">
+            Total {allPost.length}      Titile available right now : 
+                                </Typography>
+            
             <BackToTop></BackToTop>
             <div className="row">
 

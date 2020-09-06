@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from '@material-ui/core/Button';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { makeStyles } from "@material-ui/core/styles";
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
@@ -57,7 +58,7 @@ const Comments = () => {
     const classes = useStyles();
     const classess = useStyless();
     return (
-        <div className="comment-wrapper" >
+        <Box className="comment-wrapper" >
             <div className="row mx-auto">
                 <div className="col-lg-6 mx-auto">
                     <Card className={classes.root}>
@@ -109,15 +110,18 @@ const Comments = () => {
                                 </Card>
                             </>)
                         }
-                        <div className="write-comment" >
-                            <h6>Write your comment</h6>
+                        <Box className="write-comment" >
+                        <Typography component="h6" variant="h6">
+                        Write your comment
+                                            </Typography>
+
                             <textarea Placeholder="write a comment" ></textarea>
-                        </div>
+                        </Box>
                     </Card>
 
                 </div>
             </div>
-        </div>
+        </Box>
     );
 };
 
